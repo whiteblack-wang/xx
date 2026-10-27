@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#efeee4" />
+  <title>画音映沱江 · 数字文旅体验原型</title>
+  <meta name="description" content="画音映沱江：极简杂志风数字文旅演示。支持本地照片排版、虚构故事、演示路线与绿色旅行建议。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="返回首页">
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M3 19h34M5 17l7-3 8-7 8 7 7 3M7 23v8m26-8v8M7 31c1-12 25-12 26 0M4 35c5-3 9 3 15 0s10 3 17 0" stroke="currentColor" stroke-width="1.3"/></svg></span><span class="wordmark-cn">画音映沱江</span>
+        <span class="wordmark-en">PAINT · SOUND · TUO</span>
+      </a>
+      <button class="menu-button" id="menuButton" aria-label="打开菜单" aria-expanded="false" aria-controls="siteNav"><span></span><span></span></button>
+      <nav id="siteNav" class="site-nav" aria-label="页面导航" hidden><a href="#home">01 · 风景首页</a><a href="#story">02 · 声音故事</a><a href="#ai">03 · 演示路线</a><a href="#green">04 · 绿色旅行</a></nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="eyebrow"><span>RIVER JOURNAL / VOL. 01</span><span>湘西 · 沱江</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">一江青绿 / 两岸烟火</p>
+          <h1>把沱江<br><em>听成一幅画。</em></h1>
+          <p class="intro">沿着青绿的江水，读瓦檐的轮廓，听桥下的回声。把风景收进一页手记，让旅途慢一点发生。</p>
+          <div class="hero-actions"><a class="line-cta" href="#story">听一段江声 <span>↗</span></a><a class="quiet-link" href="#visual">翻开风景手记 ↓</a></div><p class="hero-note">用户提供的风貌影像 · 故事与路线为演示</p>
+        </div>
+        <figure class="hero-poster poster-roof"><div class="photo-card-head"><span>01 / 桥与倒影</span><span>BRIDGE & REFLECTION</span></div>
+          <button type="button" class="poster-photo roof-photo poster-open" data-poster="0" aria-label="查看桥与倒影原图">
+            <img src="assets/tuojiang-bridge.jpg" alt="用户提供的沱江风貌：有翘角瓦檐的廊桥横跨青绿水面，桥拱与建筑在水中形成倒影" width="1280" height="1675" fetchpriority="high">
+            <span class="zoom-mark" aria-hidden="true">↗</span>
+          </button>
+          <figcaption class="poster-meta"><span>FIG. 01 / TUO RIVER</span><span>桥在水上，画在水中。</span></figcaption>
+        </figure>
+      </div>
+      <div class="scroll-mark"><span>向下浏览</span><i></i></div>
+    </section>
+
+    <section class="zine-strip" id="visual" aria-label="沱江风景手记">
+      <div class="section-head"><span class="section-index">01 / LANDSCAPE NOTES</span><span class="section-note">风景手记</span></div>
+      <div class="landscape-intro"><h2>把目光，<em>留在两岸。</em></h2><p>桥拱、树影与层叠瓦檐。<br>在同一条江边，换一种方式观看。</p></div>
+      <div class="poster-grid">
+        <article class="mini-poster"><div class="photo-card-head"><span>02 / 临水街巷</span><span>RIVERBANK</span></div>
+          <button type="button" class="mini-photo corridor-photo poster-open" data-poster="1" aria-label="查看临水街巷原图"><img src="assets/tuojiang-riverside.jpg" alt="用户提供的沱江风貌：树枝下的临水建筑、对岸木色楼房与平静江面" width="1280" height="1920" loading="lazy"><span class="zoom-mark" aria-hidden="true">↗</span></button>
+          <div class="mini-caption"><span>FIG. 02 / RIVERBANK</span><strong>树影落在水里</strong></div>
+        </article>
+        <article class="mini-poster offset"><div class="photo-card-head"><span>03 / 群檐与山雾</span><span>LAYERS IN MIST</span></div>
+          <button type="button" class="mini-photo courtyard-photo poster-open" data-poster="2" aria-label="查看群檐与山雾原图"><img src="assets/tuojiang-mist.jpg" alt="用户提供的沱江风貌：山林薄雾、层叠瓦檐与多座桥梁沿青绿水面展开" width="1280" height="1445" loading="lazy"><span class="zoom-mark" aria-hidden="true">↗</span></button>
+          <div class="mini-caption"><span>FIG. 03 / MIST & EAVES</span><strong>群檐之间，山雾正轻</strong></div>
+        </article>
+        <article class="mini-poster upload-poster">
+          <div class="upload-title"><span>YOUR FIELD NOTE</span><h3>下一页，<br>是你的视角。</h3><p>收藏一处桥影、一段街巷，或一片山色。用自己的照片续写风景手记。</p></div>
+          <button class="upload-box" type="button" id="uploadButton">
+            <span class="upload-plus">＋</span><span>选入你的图片</span><small>桥景 / 街巷 / 山色</small>
+          </button>
+          <input id="photoUpload" type="file" accept="image/*" multiple hidden />
+          <div class="upload-note">PHOTO INPUT / 仅在本机处理<br><span>依次选入：桥景 → 街巷 → 山色 · 最多 3 张</span><br>JPG / PNG / WebP / GIF · 每张不超过 15 MB</div>
+        </article>
+      </div>
+      <p class="reference-note">PHOTO NOTES · 影像由用户提供，点击可查看原图。画面用于风貌展示；故事、声音与路线均为演示。</p>
+      <p id="uploadStatus" class="upload-status" role="status">已收录三张沱江风貌图 · 选入的图片仅在本机处理</p>
+      <button id="resetPhotos" class="reset-button" hidden>恢复风貌图片</button>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="section-head"><span class="section-index">02 / SOUND STORY</span><span class="section-note">文化故事 · 演示</span></div>
+      <div class="story-layout">
+        <div class="story-visual" role="img" aria-label="以江水倒影和桥拱线条构成的声音视觉">
+          <svg class="bridge-echo" viewBox="0 0 360 160" fill="none" aria-hidden="true"><path d="M20 66h320M20 73h320M39 100V73m282 27V73M39 109c0-51 282-51 282 0M58 59l22-6 30-21 28 17 42-29 42 29 28-17 30 21 22 6" stroke="currentColor" stroke-width="1.2"/><path d="M20 126q40-12 80 0t80 0 80 0 80 0M20 141q40-9 80 0t80 0 80 0 80 0" stroke="currentColor" stroke-opacity=".4"/></svg>
+          <div class="sound-orbit"><span class="orbit-dot"></span><span class="orbit-dot"></span><span class="orbit-dot"></span><div class="play-glyph">≈</div></div>
+          <div class="story-stamp">SOUND SKETCH / DEMO<br>水有回声 · 风有来处</div>
+        </div>
+        <div class="story-copy">
+          <p class="kicker">声音实验 / 本地合成 00:48</p>
+          <h2>桥下的水，<br>把风景说得很轻。</h2>
+          <p>想象一次沿江慢行：脚步经过桥面，风掠过瓦檐，倒影在水里轻轻散开。这是一段配合风貌影像创作的虚构声音故事。</p>
+          <button class="primary-button" id="playButton"><span class="button-icon">▶</span><span id="playText">播放演示声音</span></button>
+          <div class="demo-note" id="audioStatus" role="status">● 合成雨声演示 · 非实地录音 · 未接入音频服务</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-section" id="ai">
+      <div class="section-head"><span class="section-index">03 / AI ROUTE</span><span class="section-note">个性化游览 · 演示</span></div>
+      <div class="ai-card">
+        <div class="ai-card-top"><span class="ai-orb">✳</span><span>下一段路，从你的偏好开始</span><span class="demo-pill">DEMO</span></div>
+        <h2>如果今天的沱江<br><em>只为你留一条路</em></h2>
+        <div class="chip-row" role="group" aria-label="偏好选择">
+          <button class="choice-chip active" data-pref="慢游" aria-pressed="true">慢游</button><button class="choice-chip" data-pref="听故事" aria-pressed="false">听故事</button><button class="choice-chip" data-pref="看建筑" aria-pressed="false">看建筑</button><button class="choice-chip" data-pref="拍照" aria-pressed="false">拍照</button>
+        </div>
+        <label class="input-label" for="aiInput">告诉我，你想怎么走？</label>
+        <div class="input-row"><input id="aiInput" maxlength="100" placeholder="例如：清晨、少走路、想听故事" /><button id="generateButton" class="generate-button">生成演示 <span>↗</span></button></div>
+        <div class="ai-result" id="aiResult" aria-live="polite"><div class="result-placeholder">选择一个偏好，再生成一条演示路线</div></div>
+      </div>
+      <p class="footnote">AI ROUTE IS A PROTOTYPE · 本地预设演示 · 未接入真实 AI 服务</p>
+    </section>
+
+    <section class="green-section" id="green">
+      <div class="section-head"><span class="section-index">04 / GENTLE TRAVEL</span><span class="section-note">绿色出行建议</span></div>
+      <div class="green-layout">
+        <div class="green-copy"><p class="kicker">给江水留一点安静</p><h2>慢一点，<br><em>风景会自己靠近。</em></h2><p>沿着江岸慢慢走，为树影停一停。在条件允许时选择步行、骑行或公共交通，让风景留在记忆里，让旅途少一点负担。</p><button class="text-button" id="routeToggle" aria-expanded="false" aria-controls="greenTips">展开低碳旅行建议 <span>↘</span></button></div>
+        <div class="route-map" role="img" aria-label="虚构路线示意，桥头经过江岸到街巷，不提供真实导航"><div class="map-grid"></div><div class="route-line"></div><div class="map-point point-a">A</div><div class="map-point point-b">B</div><div class="map-point point-c">C</div><div class="map-label label-a">桥头</div><div class="map-label label-b">江岸</div><div class="map-label label-c">街巷</div><div class="map-caption">虚构路线示意 · 不可用于导航<br><span>LOW CARBON / HIGH MEMORY</span></div></div>
+      </div>
+      <div class="green-tips" id="greenTips" hidden><div><span>01</span><strong>走路优先</strong><small>根据体力选择步行，查验实时交通信息</small></div><div><span>02</span><strong>自带水杯</strong><small>给旅途减去一次性塑料</small></div><div><span>03</span><strong>轻声拍摄</strong><small>尊重居民生活，拍摄人物前征求同意</small></div></div>
+    </section>
+
+    <footer class="footer"><div class="footer-mark">画音映沱江<br><span>PAINT · SOUND · TUO</span></div><div class="footer-copy">以一江青绿，记录风景、声音与慢旅行<br><span>2026 / 影像由用户提供 · 故事与路线为演示</span></div><a href="#home" class="back-top">回到顶部 ↑</a></footer>
+  </main>
+  <dialog id="posterDialog" class="poster-dialog" aria-labelledby="posterDialogTitle">
+    <div class="dialog-toolbar"><h2 id="posterDialogTitle">风貌图片</h2><button id="closePoster" class="dialog-close" aria-label="关闭图片">关闭 ×</button></div>
+    <div class="dialog-art"><img id="dialogImage" alt=""></div>
+    <div class="dialog-bottom"><button id="previousPoster" aria-label="上一张图片">← 上一张</button><span id="posterCounter">01 / 03</span><button id="nextPoster" aria-label="下一张图片">下一张 →</button></div>
+    <p class="dialog-note">影像由用户提供 · 原图查看 · 未标注具体景点信息</p>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
